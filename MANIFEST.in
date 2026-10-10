@@ -1,4 +1,4 @@
-include LICENSE UPSTREAM_LICENSE README.md ATTRIBUTION.md CHANGELOG.md
+include LICENSE UPSTREAM_LICENSE README.md ATTRIBUTION.md CHANGELOG.md SECURITY.md
 include .gitignore MANIFEST.in
 recursive-include docs *.md
 recursive-include examples *.html Caddyfile *.service

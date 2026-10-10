@@ -104,6 +104,17 @@ devices and settings, not captured user configurations.
   before continuing. See [SAFETY.md](docs/SAFETY.md).
 - Bounded live tests support this experimental release, not indefinite reliability.
 
+## Support and security reporting
+
+This is an experimental community project. Maintenance, updates, bug fixes,
+compatibility, technical support, response times, continued availability, and
+vulnerability monitoring are not guaranteed. Publishing source or accepting
+reports does not create a commitment to provide those services.
+
+For vulnerability reports, use the private reporting procedure in
+[SECURITY.md](SECURITY.md). See [runtime data and logging](docs/PRIVACY.md#runtime-data-and-logging)
+for information handled by the service, exports, audits, and logs.
+
 ## Optional integration and development
 
 See [HOMEPAGE.md](docs/HOMEPAGE.md) for a generic meter-card example,
