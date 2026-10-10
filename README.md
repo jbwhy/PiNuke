@@ -11,12 +11,19 @@ See [ATTRIBUTION.md](ATTRIBUTION.md) and the retained [upstream MIT license](UPS
 
 ## Use at your own risk
 
+PiNuke is an independent community project. It is not affiliated with, endorsed
+by, or supported by Behringer or Music Group. Product and company names are used
+for identification.
+
 PiNuke is experimental software provided **as is, without warranty**. Incorrect
 settings, software errors, or unexpected device behavior can damage amplifiers,
 speakers, or other equipment, and excessive sound levels can damage hearing.
 Users are responsible for checking compatibility, configuring appropriate
 hardware protection, and verifying every change. PiNuke's validation, meters,
 and previews do not guarantee safe operation or replace hardware protection.
+
+Confirm settings against the amplifier's actual state using its controls or
+an independent trusted tool; do not rely on a single display alone.
 
 **To the maximum extent permitted by applicable law, the authors, contributors,
 and copyright holders accept no liability for equipment damage, personal
