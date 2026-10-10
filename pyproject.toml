@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pinuke"
+version = "0.3.0"
+description = "Pi-hosted control for a Behringer NU6000DSP"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "UPSTREAM_LICENSE"]
+requires-python = ">=3.9"
+dependencies = ["hidapi>=0.14,<1"]
+
+[project.scripts]
+pinuke = "pinuke.cli:main"
+
+[tool.setuptools.package-data]
+pinuke = ["static/*"]
+
+[tool.setuptools.packages.find]
+include = ["pinuke*"]
