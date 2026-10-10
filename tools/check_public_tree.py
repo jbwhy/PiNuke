@@ -5,7 +5,7 @@ import sys
 
 ROOT_FILES = {
     'README.md', 'ATTRIBUTION.md', 'CHANGELOG.md', 'LICENSE', 'UPSTREAM_LICENSE',
-    'pyproject.toml', 'MANIFEST.in', '.gitignore',
+    'pyproject.toml', 'MANIFEST.in', '.gitignore', 'SECURITY.md',
 }
 ROOT_DIRS = {'pinuke', 'tests', 'docs', 'examples', 'tools', '.github'}
 SKIP_DIRS = {'.git', '__pycache__', 'build', 'dist', '.venv', 'venv'}
