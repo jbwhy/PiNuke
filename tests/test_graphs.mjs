@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const sourceModule = async name => import('data:text/javascript;base64,' + Buffer.from(readFileSync(new URL(`../pinuke/static/${name}.js`, import.meta.url))).toString('base64'));
+const {peqBandDb, peqDb, crossoverDb, compressionDb, deqDb} = await sourceModule('graphs');
+const {amplitudeDb} = await sourceModule('meters');
+assert.equal(peqBandDb('OFF', 100, 12, 1, 100), 0);
+assert.equal(peqBandDb('PEQ', 100, 6, 1, 100), 6);
+assert.equal(peqDb([{type:'PEQ',freq:100,gain:6,q:1},{type:'PEQ',freq:100,gain:-6,q:1}],100),0);
+assert.equal(crossoverDb({gain_db:-.5, high_pass:{type:'OFF'},low_pass:{type:'OFF'}},100),-.5);
+assert.ok(Math.abs(crossoverDb({gain_db:0,high_pass:{type:'BUT12',freq:100},low_pass:{type:'OFF'}},100)+3.0103)<.0001);
+assert.equal(compressionDb(-40,-30,5),-40);
+assert.equal(compressionDb(-20,-30,5),-28);
+assert.equal(deqDb([{filter:{type:'OFF'},compressor:{gain:0,threshold:-30,ratio:5}}],100,-20),0);
+assert.equal(amplitudeDb(0),-Infinity);
+assert.equal(amplitudeDb(.1),-20);
+assert.equal(amplitudeDb(.1,.1),0);
+console.log('Graph and meter scale checks passed');
