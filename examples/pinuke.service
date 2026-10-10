@@ -1,0 +1,26 @@
+# Generic example. Prepare the account, USB policy, venv, private origin and
+# persistent audit storage before use; adapt storage mount guards to your host.
+[Unit]
+Description=PiNuke amplifier control
+After=network.target
+RequiresMountsFor=/var/lib/pinuke
+
+[Service]
+Type=simple
+User=pinuke
+Group=pinuke
+WorkingDirectory=/opt/pinuke
+StateDirectory=pinuke
+StateDirectoryMode=0700
+ExecStart=/opt/pinuke/.venv/bin/pinuke serve --public-origin https://amp.example --enable-meters --enable-edits --audit-dir /var/lib/pinuke/changes
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/pinuke
+
+[Install]
+WantedBy=multi-user.target

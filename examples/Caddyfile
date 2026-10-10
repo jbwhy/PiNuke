@@ -1,0 +1,8 @@
+# Example route only. Replace the reserved hostname and supply your site's
+# certificate, private access/authentication policy, and other existing routes.
+amp.example {
+    redir /pinuke /pinuke/ 308
+    handle_path /pinuke/* {
+        reverse_proxy 127.0.0.1:8765
+    }
+}
