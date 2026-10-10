@@ -1,0 +1,13 @@
+/* Optional scoped companion-card layout. Load after companion styles. */
+[data-pinuke-zone]{position:absolute;z-index:4;top:calc(100% + 1.75rem);left:0;width:100%;container:pinuke-zone / inline-size}
+[data-pinuke-zone]>.pinuke-pip-pair{display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;max-width:57.25rem;margin:0 auto}
+/* Only external layout of the existing card changes; native internals are retained. */
+[data-pinuke-zone]>.pinuke-pip-pair>#pip-card{position:relative;top:auto;left:auto;transform:none;width:min(37.5rem,100%);max-width:100%;margin:0}
+[data-pinuke-zone]>.pinuke-pip-pair>[data-pinuke-pip]{width:min(23.75rem,100%);max-width:100%}
+[data-pinuke-zone]>.pinuke-pip-pair>[hidden]{display:none}
+@container pinuke-zone (min-width:48.5rem){
+  [data-pinuke-zone]>.pinuke-pip-pair{flex-direction:row;justify-content:center;align-items:stretch}
+  [data-pinuke-zone]>.pinuke-pip-pair>#pip-card{flex:0 1 37.5rem;min-width:28.75rem}
+  [data-pinuke-zone]>.pinuke-pip-pair>[data-pinuke-pip]{flex:0 0 23.75rem}
+  [data-pinuke-zone]>.pinuke-pip-pair:has(>#pip-card:not([hidden]))>[data-pinuke-pip]{flex-basis:18.75rem;width:18.75rem}
+}

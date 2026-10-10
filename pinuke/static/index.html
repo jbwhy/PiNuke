@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PiNuke · amplifier control</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pip.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+<a id="home-button" class="pi-home" href="/" aria-label="Return to Pi homepage">π</a>
+<main class="console">
+  <header class="console-header">
+    <div><p class="eyebrow">AMPLIFIER CONTROL</p><h1><span>Pi</span>Nuke</h1></div>
+    <div class="amp-id"><strong id="amp-name">NU6000DSP</strong><span id="amp-detail">USB · Raspberry Pi</span><span id="mode-badge" class="badge">Connecting</span></div>
+  </header>
+  <section class="connection" aria-label="Amplifier connection">
+    <div><p id="device-status" role="status">Checking the Pi USB port…</p><p id="read-status" class="muted" role="status" aria-live="polite">Read the amplifier to begin.</p></div>
+    <div class="buttons"><button id="read-button" type="button" disabled>Read amplifier</button><button id="save-button" type="button" disabled>Export JSON</button></div>
+  </section>
+  <div class="console-layout">
+    <div class="signal-chain">
+      <details id="summary" hidden><summary id="readback-label">Readback details</summary><dl id="summary-fields" class="facts"></dl></details>
+      <div id="empty-state" class="empty-state"><span class="empty-mark" aria-hidden="true">∿</span><h2>Ready when you are.</h2><p>Read the amplifier to see its current filters and controls.</p><p class="muted">Live levels can be monitored independently.</p></div>
+      <form id="editor" hidden>
+        <p id="edit-note" class="edit-note"></p>
+        <nav class="chain-nav" aria-label="Signal chain"><a href="#crossover">Crossover</a><span>→</span><a href="#peq">EQ</a><span>→</span><a href="#deq">Dynamic EQ</a><span>→</span><a href="#output">Delay / limiter</a></nav>
+        <div id="channels"></div>
+        <section id="edit-actions" class="edit-actions" aria-labelledby="change-count">
+          <div class="apply-row"><div><p class="eyebrow">AMPLIFIER SETTINGS</p><h2 id="change-count">No pending changes</h2></div><div class="buttons"><button id="discard-button" type="button" disabled>Discard</button><button id="apply-button" class="primary" type="button" disabled>Apply changes</button></div></div>
+          <details id="change-review" hidden open><summary>Review changes</summary><ul id="change-list"></ul></details>
+          <p class="muted">Every change is checked against a fresh amplifier readback.</p>
+        </section>
+      </form>
+    </div>
+    <aside class="monitor-rail" aria-label="Live amplifier monitoring"><div id="live-meters"></div><div class="monitor-foot"><span class="monitor-rule"></span><p>INPUT → DSP → OUTPUT</p><details><summary>Meter scale &amp; status</summary><p>Until calibrated, these are relative live levels—not dBFS or limiter headroom. Clip and limiter activity indicators will be enabled only when verified on this amp.</p><p>Peak markers hold for 1.4 seconds. Missing readings clear the display.</p></details></div></aside>
+  </div>
+  <footer>PiNuke · NU6000DSP <span>Physical level knobs remain manual. Mode and onboard presets are not edited here.</span></footer>
+</main>
+</body>
+</html>
