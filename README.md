@@ -9,6 +9,20 @@ PiNuke's protocol module is adapted from
 [Ryan Mathewson's inuke-oscd](https://github.com/RyanMathewson/inuke-oscd).
 See [ATTRIBUTION.md](ATTRIBUTION.md) and the retained [upstream MIT license](UPSTREAM_LICENSE).
 
+## Use at your own risk
+
+PiNuke is experimental software provided **as is, without warranty**. Incorrect
+settings, software errors, or unexpected device behavior can damage amplifiers,
+speakers, or other equipment, and excessive sound levels can damage hearing.
+Users are responsible for checking compatibility, configuring appropriate
+hardware protection, and verifying every change. PiNuke's validation, meters,
+and previews do not guarantee safe operation or replace hardware protection.
+
+**To the maximum extent permitted by applicable law, the authors, contributors,
+and copyright holders accept no liability for equipment damage, personal
+injury, or other loss arising from use of this software.** See the [MIT license](LICENSE)
+and [editing safety notes](docs/SAFETY.md).
+
 ## Features
 
 - Both channels: eight PEQ bands, high/low-pass crossovers, DSP output gain,
